@@ -12,7 +12,11 @@ socket.on('message', function(data) {
 var $form = jQuery('#messageForm');
 $form.on('submit', function(e) {
     e.preventDefault();
+
+    var $input = $form.find('input[name=message]');
     socket.emit('message', {
-        text: $form.find('input[name=message]').val()
+        text: $input.val()
     });
+
+    $input.val('');
 });
