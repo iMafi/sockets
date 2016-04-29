@@ -7,8 +7,12 @@ socket.on('connect', function() {
 socket.on('message', function(data) {
     console.log('New message:');
     console.log(data.text);
+    console.log(data.timestamp);
 
-    $('.messages').append('<p>' + data.text + '</p>');
+    var timestamp = moment.utc(data.timestamp).local().format('h:mm a');
+    console.log(timestamp);
+
+    $('.messages').append('<p><strong>' + timestamp + ':</strong> ' + data.text + '</p>');
 });
 
 var $form = jQuery('#messageForm');
