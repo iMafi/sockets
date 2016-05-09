@@ -2,19 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Socket.io Application</title>
 </head>
 <body>
-    <h1>Join Chat</h1>
-
-    <form action="chat.html">
-        <label>Display Name:
-            <input type="text" name="name">
-        </label>
-        <label>Room Name:
-            <input type="text" name="room">
-        </label>
-        <input type="submit" value="Join">
-    </form>
+    <div class="vertical-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 well">
+                    <h1>Join Chat</h1>
+                    <form action="chat.html">
+                        <div class="form-group">
+                            <label for="username">Display Name:</label>
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                                <input type="text" id="username" name="name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userroom">Room Name:</label>
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-comment"></i>
+                            </span>
+                                <input type="text" id="userroom" name="room" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="Join">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
