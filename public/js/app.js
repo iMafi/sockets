@@ -16,10 +16,11 @@ socket.on('connect', function() {
 socket.on('message', function(data) {
 
     var timestamp = moment.utc(data.timestamp).local().format('h:mm a');
-    var message = '<p><strong>' + data.name + ' ' + timestamp + ':</strong></p> ';
-    message += '<p>' + data.text + '</p>';
+    var $message = $('<li class="list-group-item"></li>');
+    $message.append('<p><strong>' + data.name + ' ' + timestamp + ':</strong></p>');
+    $message.append('<p>' + data.text + '</p>');
 
-    $('.messages').append(message);
+    $('.messages').append($message);
 });
 
 var $form = jQuery('#messageForm');
